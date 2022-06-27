@@ -53,7 +53,7 @@ public class SignUpForm extends javax.swing.JFrame {
 
     private boolean checkData() {
         String regexSdt = "^0[1-9][0-9]{8,9}$";
-        String regexPassword = "^((?=.*[A-Z])(?=.*[0-9]).*){6}$";
+        String regexPassword = "^(?=.*[A-Z])(?=.*[0-9])\\w{6,}$";
         boolean resultCheck = true;
         if (txtSignUpPhoneNumber.getText().trim().length() == 0) {
             txtSignUpPhoneNumber.setForeground(Color.red);
