@@ -9,5 +9,10 @@ package Services;
  * @author PC
  */
 public interface ServiceDAO {
-    public void conectServer();
+    public void openServer();
+    public void acceptClient();
+    public void openSql();
+    public void closeSql();
+    public void closeServer();
+    public void wrapDataPackage1();
 }

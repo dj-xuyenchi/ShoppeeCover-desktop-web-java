@@ -4,17 +4,13 @@
  */
 package Form;
 
+
 import ClassLib.Account;
-import java.awt.Image;
 import javax.swing.ImageIcon;
 import Services.Img;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 /**
  *
  * @author PC
@@ -68,7 +64,7 @@ public class MainForm extends javax.swing.JFrame {
             new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies3.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies4.png"),
             new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies5.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies6.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies7.png"),
             new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies8.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies9.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies10.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies1.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies12.png")};
+            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies11.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies12.png")};
         JLabel[] listLabelCatalogies = {jlabelCatalogi1, jlabelCatalogi2, jlabelCatalogi3, jlabelCatalogi4, jlabelCatalogi5, jlabelCatalogi6, jlabelCatalogi7, jlabelCatalogi8, jlabelCatalogi9, jlabelCatalogi10,
             jlabelCatalogi11, jlabelCatalogi12};
         for (int i = 0; i < catalogies.length; i++) {

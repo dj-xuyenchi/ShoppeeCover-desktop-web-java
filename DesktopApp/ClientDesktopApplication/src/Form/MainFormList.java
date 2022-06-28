@@ -49,11 +49,6 @@ public class MainFormList extends javax.swing.JFrame {
         ImageIcon logoLux = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoLux.png");
         ImageIcon pannel3 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\pannel3.png");
         ImageIcon logoFilter = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\phieuloc.jpg");
-        ImageIcon[] catalogies = {new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies1.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies2.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies3.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies4.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies5.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies6.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies7.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies8.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies9.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies10.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies1.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies12.png")};
         jlabelLogoShop.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 102, 93)));
         jlabelShopName.setIcon(new ImageIcon(Img.resizer(imgLogoName.getImage(), 100, 30)));
         jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
