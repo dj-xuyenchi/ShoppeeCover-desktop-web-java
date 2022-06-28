@@ -33,7 +33,7 @@ public class Services implements ServiceDAO {
     private Connection con;
     private Statement st;
     private ResultSet rs;
-    private List<ImageFromSql> listPackage1;
+    private List<ImageFromSql> listPackage;
     
     public Services(int port) {
         this.port = port;
@@ -77,7 +77,9 @@ public class Services implements ServiceDAO {
                         System.out.println("Connected...");
                         oos = new ObjectOutputStream(soc.getOutputStream());
                         wrapDataPackage1();
-                        oos.writeObject(listPackage1);
+                        oos.writeObject(listPackage);
+//                        wrapDataPackage2();
+//                        oos.writeObject(listPackage);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -89,7 +91,7 @@ public class Services implements ServiceDAO {
     
     @Override
     public void wrapDataPackage1() {
-        listPackage1 = new ArrayList<>();
+        listPackage = new ArrayList<>();
         openSql();
         String query1 = "Select imgname,imgdata from SERVERIMG order by countid asc";
         try {
@@ -97,7 +99,25 @@ public class Services implements ServiceDAO {
             while (rs.next()) {
                 String imgName = rs.getString(1);
                 byte[] imgData = rs.getBytes(2);
-                listPackage1.add(new ImageFromSql(imgName, imgData));
+                listPackage.add(new ImageFromSql(imgName, imgData));
+            }
+            closeSql();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void wrapDataPackage2() {
+        listPackage = new ArrayList<>();
+        openSql();
+        String query1 = "Select imgname,imgdata from SERVERIMG order by countid asc";
+        try {
+            rs = st.executeQuery(query1);
+            while (rs.next()) {
+                String imgName = rs.getString(1);
+                byte[] imgData = rs.getBytes(2);
+                listPackage.add(new ImageFromSql(imgName, imgData));
             }
             closeSql();
         } catch (SQLException ex) {

@@ -4,13 +4,19 @@
  */
 package Form;
 
-
 import ClassLib.Account;
+import ClassLib.ImageFromSql;
 import javax.swing.ImageIcon;
 import Services.Img;
+import Services.Services;
 import java.awt.Color;
 import java.awt.Container;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
+
 /**
  *
  * @author PC
@@ -21,16 +27,21 @@ public class MainForm extends javax.swing.JFrame {
     private SignUpForm _signUpForm;
     private SignInForm _signInForm;
     private Container _con;
+    private Services services;
+    private List<ImageFromSql> listDecor;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     public MainForm() {
         initComponents();
+        services = new Services();
+        services.conectServer();
+        listDecor = services.getList();
         setLogoAndContent();
         _con = this.getContentPane();
         _con.setBackground(Color.WHITE);
         setLocationRelativeTo(this);
     }
-    
+
     public MainForm(Account a) {
         initComponents();
         setLogoAndContent();
@@ -39,87 +50,92 @@ public class MainForm extends javax.swing.JFrame {
         _con.setBackground(Color.WHITE);
         setLocationRelativeTo(this);
     }
-    
+
     private void setAccount(String s) {
         jlabelSignUp.removeMouseListener(jlabelSignUp.getMouseListeners()[0]);
         jlabelSignUp.setText("Xin chào:");
         jlabelSignIn.removeMouseListener(jlabelSignIn.getMouseListeners()[0]);
         jlabelSignIn.setText(s);
     }
-    
+
     private void setLogoAndContent() {
-        ImageIcon imgLogo = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoshop.png");
-        ImageIcon imgLogoName = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoshopname.png");
-        ImageIcon imgLogoSearch = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logosearch.png");
-        ImageIcon imgLogoBag = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logobag.png");
-        ImageIcon imgPanel1 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\panel1.png");
-        ImageIcon imgPanel2 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\panel2.png");
-        ImageIcon logo1k = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logo1k.png");
-        ImageIcon logoCard = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoCard.png");
-        ImageIcon logoCheap = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoCheap.png");
-        ImageIcon logoFreeShip = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoFreeShip.png");
-        ImageIcon logoLux = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoLux.png");
-        ImageIcon pannel3 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\pannel3.png");
-        ImageIcon[] catalogies = {new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies1.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies2.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies3.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies4.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies5.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies6.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies7.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies8.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies9.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies10.png"),
-            new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies11.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\catalogies12.png")};
-        JLabel[] listLabelCatalogies = {jlabelCatalogi1, jlabelCatalogi2, jlabelCatalogi3, jlabelCatalogi4, jlabelCatalogi5, jlabelCatalogi6, jlabelCatalogi7, jlabelCatalogi8, jlabelCatalogi9, jlabelCatalogi10,
-            jlabelCatalogi11, jlabelCatalogi12};
-        for (int i = 0; i < catalogies.length; i++) {
-            listLabelCatalogies[i].setIcon(new ImageIcon(Img.resizer(catalogies[i].getImage(), 107, 107)));
+        try {
+            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(listDecor.get(0).getData()));
+            ImageIcon imgLogoName = new ImageIcon(Img.create_img_from_byte(listDecor.get(1).getData()));
+            ImageIcon imgLogoSearch = new ImageIcon(Img.create_img_from_byte(listDecor.get(2).getData()));
+            ImageIcon imgLogoBag = new ImageIcon(Img.create_img_from_byte(listDecor.get(3).getData()));
+            ImageIcon imgPanel1 = new ImageIcon(Img.create_img_from_byte(listDecor.get(4).getData()));
+            ImageIcon imgPanel2 = new ImageIcon(Img.create_img_from_byte(listDecor.get(5).getData()));
+            ImageIcon logo1k = new ImageIcon(Img.create_img_from_byte(listDecor.get(6).getData()));
+            ImageIcon logoCard = new ImageIcon(Img.create_img_from_byte(listDecor.get(7).getData()));
+            ImageIcon logoCheap = new ImageIcon(Img.create_img_from_byte(listDecor.get(8).getData()));
+            ImageIcon logoFreeShip = new ImageIcon(Img.create_img_from_byte(listDecor.get(9).getData()));
+            ImageIcon logoLux = new ImageIcon(Img.create_img_from_byte(listDecor.get(10).getData()));
+            ImageIcon pannel3 = new ImageIcon(Img.create_img_from_byte(listDecor.get(11).getData()));
+            ImageIcon[] catalogies = {new ImageIcon(Img.create_img_from_byte(listDecor.get(12).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(13).getData())),
+                new ImageIcon(Img.create_img_from_byte(listDecor.get(14).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(15).getData())),
+                new ImageIcon(Img.create_img_from_byte(listDecor.get(16).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(17).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(18).getData())),
+                new ImageIcon(Img.create_img_from_byte(listDecor.get(19).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(20).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(21).getData())),
+                new ImageIcon(Img.create_img_from_byte(listDecor.get(22).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(23).getData()))};
+            ImageIcon[] logoSanSales = {new ImageIcon(Img.create_img_from_byte(listDecor.get(24).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(25).getData()))};
+            ImageIcon[] slide = {new ImageIcon(Img.create_img_from_byte(listDecor.get(26).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(27).getData())), new ImageIcon(Img.create_img_from_byte(listDecor.get(28).getData()))};
+            JLabel[] listLabelCatalogies = {jlabelCatalogi1, jlabelCatalogi2, jlabelCatalogi3, jlabelCatalogi4, jlabelCatalogi5, jlabelCatalogi6, jlabelCatalogi7, jlabelCatalogi8, jlabelCatalogi9, jlabelCatalogi10,
+                jlabelCatalogi11, jlabelCatalogi12};
+            for (int i = 0; i < catalogies.length; i++) {
+                listLabelCatalogies[i].setIcon(new ImageIcon(Img.resizer(catalogies[i].getImage(), 107, 107)));
+            }
+            btnSearch.setIcon(new ImageIcon(Img.resizer(imgLogoSearch.getImage(), 41, 41)));
+            jlabelPanel3.setIcon(new ImageIcon(Img.resizer(pannel3.getImage(), 926, 104)));
+            jlabelLogo1k.setIcon(new ImageIcon(Img.resizer(logo1k.getImage(), 121, 84)));
+            jlabelCardDt.setIcon(new ImageIcon(Img.resizer(logoCard.getImage(), 121, 84)));
+            jlabelLogoCheap.setIcon(new ImageIcon(Img.resizer(logoCheap.getImage(), 121, 84)));
+            jlabelLogoLux.setIcon(new ImageIcon(Img.resizer(logoLux.getImage(), 121, 84)));
+            jlabelLogoFreeShip.setIcon(new ImageIcon(Img.resizer(logoFreeShip.getImage(), 121, 84)));
+            jlabelPanel1.setIcon(new ImageIcon(Img.resizer(imgPanel1.getImage(), 367, 105)));
+            jlabelPanel2.setIcon(new ImageIcon(Img.resizer(imgPanel2.getImage(), 367, 105)));
+            jlabelLogoShop.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 102, 93)));
+            jlabelShopName.setIcon(new ImageIcon(Img.resizer(imgLogoName.getImage(), 100, 30)));
+            jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
+            Thread slideImg = new Thread() {
+                @Override
+                public void run() {
+                    int i = 0;
+                    while (true) {
+                        i++;
+                        if (i > 2) {
+                            i = 0;
+                        }
+                        jlabelSlide.setIcon(new ImageIcon(Img.resizer(slide[i].getImage(), 549, 219)));
+                        try {
+                            Thread.sleep(1000);
+                        } catch (Exception e) {
+                        }
+                    }
+                }
+            };
+            slideImg.start();
+            Thread logoSales = new Thread() {
+                @Override
+                public void run() {
+                    int i = 0;
+                    while (true) {
+                        i++;
+                        if (i > 1) {
+                            i = 0;
+                        }
+                        jlabelSanSales.setIcon(new ImageIcon(Img.resizer(logoSanSales[i].getImage(), 121, 84)));
+                        try {
+                            Thread.sleep(600);
+                        } catch (Exception e) {
+                        }
+                    }
+                }
+            };
+            logoSales.start();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-        jlabelPanel3.setIcon(new ImageIcon(Img.resizer(pannel3.getImage(), 926, 104)));
-        jlabelLogo1k.setIcon(new ImageIcon(Img.resizer(logo1k.getImage(), 121, 84)));
-        jlabelCardDt.setIcon(new ImageIcon(Img.resizer(logoCard.getImage(), 121, 84)));
-        jlabelLogoCheap.setIcon(new ImageIcon(Img.resizer(logoCheap.getImage(), 121, 84)));
-        jlabelLogoLux.setIcon(new ImageIcon(Img.resizer(logoLux.getImage(), 121, 84)));
-        jlabelLogoFreeShip.setIcon(new ImageIcon(Img.resizer(logoFreeShip.getImage(), 121, 84)));
-        jlabelPanel1.setIcon(new ImageIcon(Img.resizer(imgPanel1.getImage(), 367, 105)));
-        jlabelPanel2.setIcon(new ImageIcon(Img.resizer(imgPanel2.getImage(), 367, 105)));
-        jlabelLogoShop.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 102, 93)));
-        jlabelShopName.setIcon(new ImageIcon(Img.resizer(imgLogoName.getImage(), 100, 30)));
-        jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
-        ImageIcon[] logoSanSales = {new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoSansales1.png"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoSansales2.png")};
-        ImageIcon[] slide = {new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\slide\\slide1.jpg"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\slide\\slide2.jpg"), new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\slide\\slide3.png")};
-        Thread slideImg = new Thread() {
-            @Override
-            public void run() {
-                int i = 0;
-                while (true) {
-                    i++;
-                    i++;
-                    if (i > 2) {
-                        i = 0;
-                    }
-                    jlabelSlide.setIcon(new ImageIcon(Img.resizer(slide[i].getImage(), 549, 219)));
-                    try {
-                        Thread.sleep(1000);
-                    } catch (Exception e) {
-                    }
-                }
-            }
-        };
-        slideImg.start();
-        Thread logoSales = new Thread() {
-            @Override
-            public void run() {
-                int i = 0;
-                while (true) {
-                    i++;
-                    if (i > 1) {
-                        i = 0;
-                    }
-                    jlabelSanSales.setIcon(new ImageIcon(Img.resizer(logoSanSales[i].getImage(), 121, 84)));
-                    try {
-                        Thread.sleep(600);
-                    } catch (Exception e) {
-                    }
-                }
-            }
-        };
-        logoSales.start();
+
     }
 
     /**
@@ -165,7 +181,7 @@ public class MainForm extends javax.swing.JFrame {
         jlabelShopName = new javax.swing.JLabel();
         txtSearchField = new javax.swing.JTextField();
         jlabelLogoBag = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         jlabelTopSearched1 = new javax.swing.JLabel();
         jlabelTopSearched2 = new javax.swing.JLabel();
         jlabelTopSearched3 = new javax.swing.JLabel();
@@ -414,10 +430,11 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setBackground(new java.awt.Color(255, 255, 255));
+        btnSearch.setBorder(null);
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -465,10 +482,6 @@ public class MainForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(jlabelTopSearched1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jlabelTopSearched2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -477,10 +490,14 @@ public class MainForm extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jlabelTopSearched4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jlabelTopSearched5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(57, 57, 57)
+                                .addComponent(jlabelTopSearched5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29)
                         .addComponent(jlabelLogoBag, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 57, Short.MAX_VALUE))
+                        .addGap(0, 94, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jlabelBecomeSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -511,9 +528,9 @@ public class MainForm extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addGap(9, 9, 9)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSearchField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                                 .addComponent(jlabelLogoBag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jlabelTopSearched1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -551,11 +568,11 @@ public class MainForm extends javax.swing.JFrame {
         txtSearchField.setText("");
     }//GEN-LAST:event_txtSearchFieldMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MainFormList main = new MainFormList("");
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        MainFormList main = new MainFormList("",listDecor);
         this.dispose();
         main.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jlabelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSignInMouseClicked
         _signInForm = new SignInForm();
@@ -606,7 +623,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

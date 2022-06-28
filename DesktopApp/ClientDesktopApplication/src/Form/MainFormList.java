@@ -4,12 +4,15 @@
  */
 package Form;
 
+import ClassLib.ImageFromSql;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import Services.Img;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.io.IOException;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,38 +27,37 @@ public class MainFormList extends javax.swing.JFrame {
     private SignUpForm _signUpForm;
     private SignInForm _signInForm;
     private Container _con;
+    private List<ImageFromSql> listDecor;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
-    public MainFormList(String searchingProduct) {
+    public MainFormList(String searchingProduct, List<ImageFromSql> listDecor) {
         initComponents();
+        this.listDecor = listDecor;
         setLogoAndContent();
         _con = this.getContentPane();
         _con.setBackground(Color.WHITE);
-       // clearBorderTextArea();
+        // clearBorderTextArea();
         setLocationRelativeTo(this);
     }
-    
+
     private void setLogoAndContent() {
-        ImageIcon imgLogo = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoshop.png");
-        ImageIcon imgLogoName = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoshopname.png");
-        ImageIcon imgLogoSearch = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logosearch.png");
-        ImageIcon imgLogoBag = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logobag.png");
-        ImageIcon imgPanel1 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\panel1.png");
-        ImageIcon imgPanel2 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\panel2.png");
-        ImageIcon logo1k = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logo1k.png");
-        ImageIcon logoCard = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoCard.png");
-        ImageIcon logoCheap = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoCheap.png");
-        ImageIcon logoFreeShip = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoFreeShip.png");
-        ImageIcon logoLux = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logoLux.png");
-        ImageIcon pannel3 = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\pannel3.png");
-        ImageIcon logoFilter = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\phieuloc.jpg");
-        jlabelLogoShop.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 102, 93)));
-        jlabelShopName.setIcon(new ImageIcon(Img.resizer(imgLogoName.getImage(), 100, 30)));
-        jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
-        jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
-        this.logoFilter.setIcon(new ImageIcon(Img.resizer(logoFilter.getImage(), 29, 30)));
+        try {
+            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(listDecor.get(0).getData()));
+            ImageIcon imgLogoName = new ImageIcon(Img.create_img_from_byte(listDecor.get(1).getData()));
+            ImageIcon imgLogoSearch = new ImageIcon(Img.create_img_from_byte(listDecor.get(2).getData()));
+            ImageIcon imgLogoBag = new ImageIcon(Img.create_img_from_byte(listDecor.get(3).getData()));
+            ImageIcon imgPanel1 = new ImageIcon(Img.create_img_from_byte(listDecor.get(4).getData()));
+            ImageIcon imgPanel2 = new ImageIcon(Img.create_img_from_byte(listDecor.get(5).getData()));
+            ImageIcon pannel3 = new ImageIcon(Img.create_img_from_byte(listDecor.get(11).getData()));
+            ImageIcon logoFilter = new ImageIcon(Img.create_img_from_byte(listDecor.get(29).getData()));
+            jButton1.setIcon(new ImageIcon(Img.resizer(imgLogoSearch.getImage(), 41, 41)));
+            filter.setIcon(new ImageIcon(Img.resizer(logoFilter.getImage(), 31, 35)));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
-    private void clearBorderTextArea(){
+
+    private void clearBorderTextArea() {
         txtNameProduct.setBorder(null);
         txtNameProduct1.setBorder(null);
     }
@@ -162,7 +164,7 @@ public class MainFormList extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        logoFilter = new javax.swing.JLabel();
+        filter = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -861,7 +863,6 @@ public class MainFormList extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3\\logosearch.png")); // NOI18N
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -942,7 +943,7 @@ public class MainFormList extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jlabelLogoBag, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(49, Short.MAX_VALUE))))
+                        .addContainerGap(113, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1065,7 +1066,7 @@ public class MainFormList extends javax.swing.JFrame {
                             .addComponent(jCheckBox1)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(logoFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(filter, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1089,7 +1090,7 @@ public class MainFormList extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                    .addComponent(logoFilter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(filter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1161,7 +1162,7 @@ public class MainFormList extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSearchFieldMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1169,7 +1170,7 @@ public class MainFormList extends javax.swing.JFrame {
         _signInForm = new SignInForm();
         this.dispose();
         _signInForm.setVisible(true);
-        
+
     }//GEN-LAST:event_jlabelSignInMouseClicked
 
     private void jlabelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSignUpMouseClicked
@@ -1186,7 +1187,6 @@ public class MainFormList extends javax.swing.JFrame {
         btnFilterPriceTo.setText("");
     }//GEN-LAST:event_btnFilterPriceToMouseClicked
 
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel avatarStaff;
@@ -1199,6 +1199,7 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JLabel avatarStaff7;
     private javax.swing.JTextField btnFilterPriceFrom;
     private javax.swing.JTextField btnFilterPriceTo;
+    private javax.swing.JLabel filter;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1256,7 +1257,6 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JLabel jlabelTopSearched4;
     private javax.swing.JLabel jlabelTopSearched5;
     private javax.swing.JPanel jpanelMain;
-    private javax.swing.JLabel logoFilter;
     private javax.swing.JCheckBox producerName1;
     private javax.swing.JCheckBox producerName2;
     private javax.swing.JCheckBox producerName3;

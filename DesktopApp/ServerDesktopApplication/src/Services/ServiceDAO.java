@@ -15,4 +15,5 @@ public interface ServiceDAO {
     public void closeSql();
     public void closeServer();
     public void wrapDataPackage1();
+    public void wrapDataPackage2();
 }

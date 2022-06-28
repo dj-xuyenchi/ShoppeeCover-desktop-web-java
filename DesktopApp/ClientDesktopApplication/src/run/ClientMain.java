@@ -5,14 +5,14 @@
 package run;
 
 import Services.Services;
-
+import Form.MainForm;
 /**
  *
  * @author PC
  */
 public class ClientMain {
     public static void main(String[] args) {
-       Services client = new Services();
-       client.conectServer();
+       MainForm main = new MainForm();
+       main.setVisible(true);
     }
 }

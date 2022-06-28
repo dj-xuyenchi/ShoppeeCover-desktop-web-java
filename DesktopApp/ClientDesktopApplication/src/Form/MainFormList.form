@@ -1383,7 +1383,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Component id="jlabelLogoBag" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                          <EmptySpace pref="113" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1636,7 +1636,7 @@
                               <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="logoFilter" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="filter" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1668,7 +1668,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel4" pref="25" max="32767" attributes="0"/>
-                      <Component id="logoFilter" max="32767" attributes="0"/>
+                      <Component id="filter" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -1722,7 +1722,7 @@
             <Property name="text" type="java.lang.String" value="B&#x1ed9; l&#x1ecd;c t&#xec;m ki&#x1ebf;m"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="logoFilter">
+        <Component class="javax.swing.JLabel" name="filter">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>

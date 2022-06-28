@@ -4,10 +4,15 @@
  */
 package Services;
 
+import ClassLib.ImageFromSql;
+import java.util.List;
+
 /**
  *
  * @author PC
  */
 public interface ServiceDAO {
+    public List<ImageFromSql> getList();
+    public List<ImageFromSql> getList1();
     public void conectServer();
 }

@@ -17,11 +17,22 @@ import java.util.List;
  */
 public class Services implements ServiceDAO {
 
-    private List<ImageFromSql> listImgDecor;
+    private List<ImageFromSql> listImgDecor1;
+    private List<ImageFromSql> listImgDecor2;
     private Socket soc;
     private ObjectInputStream ois;
 
     public Services() {
+    }
+
+    @Override
+    public List<ImageFromSql> getList() {
+        return listImgDecor1;
+    }
+
+    @Override
+    public List<ImageFromSql> getList1() {
+        return listImgDecor2;
     }
 
     @Override
@@ -30,9 +41,10 @@ public class Services implements ServiceDAO {
             soc = new Socket("localhost", 6969);
             System.out.println("Connected..");
             ois = new ObjectInputStream(soc.getInputStream());
-            Object getOb = ois.readObject();
-            listImgDecor = (List<ImageFromSql>) getOb;
-            System.out.println(listImgDecor.get(0).getName());
+            Object getOb1 = ois.readObject();
+            listImgDecor1 = (List<ImageFromSql>) getOb1;
+//            Object getOb2 = ois.readObject();
+//            listImgDecor2 = (List<ImageFromSql>) getOb2;
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (ClassNotFoundException ex) {
