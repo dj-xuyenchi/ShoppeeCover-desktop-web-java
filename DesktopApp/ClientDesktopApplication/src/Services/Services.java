@@ -38,7 +38,7 @@ public class Services implements ServiceDAO {
     @Override
     public void conectServer() {
         try {
-            soc = new Socket("localhost", 6969);
+            soc = new Socket("2405:4802:239:bc0:4ca6:346d:2702:fffc", 6969);
             System.out.println("Connected..");
             ois = new ObjectInputStream(soc.getInputStream());
             Object getOb1 = ois.readObject();

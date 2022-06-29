@@ -196,7 +196,6 @@ public class MainForm extends javax.swing.JFrame {
         setMaximizedBounds(new java.awt.Rectangle(1376, 979, 979, 979));
         setMaximumSize(new java.awt.Dimension(1376, 979));
         setMinimumSize(new java.awt.Dimension(1376, 979));
-        setResizable(false);
 
         jpanelMain.setBackground(new java.awt.Color(255, 255, 255));
         jpanelMain.setEnabled(false);
