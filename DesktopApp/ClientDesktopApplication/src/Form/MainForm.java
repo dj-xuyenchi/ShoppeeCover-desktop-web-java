@@ -11,6 +11,8 @@ import Services.Img;
 import Services.Services;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -39,6 +41,10 @@ public class MainForm extends javax.swing.JFrame {
         setLogoAndContent();
         _con = this.getContentPane();
         _con.setBackground(Color.WHITE);
+          Toolkit t = Toolkit.getDefaultToolkit();
+        Dimension d = t.getScreenSize();
+        this.setSize(d.width-300, d.height-100);
+        setLocationRelativeTo(this);
         setLocationRelativeTo(this);
     }
 
@@ -193,9 +199,10 @@ public class MainForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Shoppee");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximizedBounds(new java.awt.Rectangle(1376, 979, 979, 979));
-        setMaximumSize(new java.awt.Dimension(1376, 979));
-        setMinimumSize(new java.awt.Dimension(1376, 979));
+        setMaximumSize(null);
+        setMinimumSize(null);
+        setPreferredSize(null);
+        setResizable(false);
 
         jpanelMain.setBackground(new java.awt.Color(255, 255, 255));
         jpanelMain.setEnabled(false);
