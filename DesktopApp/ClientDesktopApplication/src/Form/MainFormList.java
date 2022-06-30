@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import Services.Img;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.io.IOException;
 import java.util.List;
@@ -17,12 +18,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author PC
  */
 public class MainFormList extends javax.swing.JFrame {
-
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     private SignUpForm _signUpForm;
     private SignInForm _signInForm;
@@ -82,69 +83,69 @@ public class MainFormList extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txtNameProduct4 = new javax.swing.JTextArea();
-        shopName4 = new javax.swing.JLabel();
         staffPrice4 = new javax.swing.JLabel();
         shopAdress4 = new javax.swing.JLabel();
         staffVote4 = new javax.swing.JLabel();
+        name1Product5 = new javax.swing.JLabel();
+        name2Product5 = new javax.swing.JLabel();
         avatarStaff4 = new javax.swing.JLabel();
+        shopName4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         avatarStaff = new javax.swing.JLabel();
         shopName = new javax.swing.JLabel();
         staffPrice = new javax.swing.JLabel();
         shopAdress = new javax.swing.JLabel();
         staffVote = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtNameProduct = new javax.swing.JTextArea();
+        name1Product1 = new javax.swing.JLabel();
+        name2Product1 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        txtNameProduct5 = new javax.swing.JTextArea();
-        shopName5 = new javax.swing.JLabel();
         staffPrice5 = new javax.swing.JLabel();
         shopAdress5 = new javax.swing.JLabel();
         staffVote5 = new javax.swing.JLabel();
+        name1Product6 = new javax.swing.JLabel();
+        name2Product6 = new javax.swing.JLabel();
         avatarStaff5 = new javax.swing.JLabel();
+        shopName5 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtNameProduct1 = new javax.swing.JTextArea();
-        shopName1 = new javax.swing.JLabel();
         staffPrice1 = new javax.swing.JLabel();
         shopAdress1 = new javax.swing.JLabel();
         staffVote1 = new javax.swing.JLabel();
+        name1Product2 = new javax.swing.JLabel();
+        name2Product2 = new javax.swing.JLabel();
         avatarStaff1 = new javax.swing.JLabel();
+        shopName1 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        txtNameProduct6 = new javax.swing.JTextArea();
-        shopName6 = new javax.swing.JLabel();
         staffPrice6 = new javax.swing.JLabel();
         shopAdress6 = new javax.swing.JLabel();
         staffVote6 = new javax.swing.JLabel();
+        name1Product7 = new javax.swing.JLabel();
+        name2Product7 = new javax.swing.JLabel();
         avatarStaff6 = new javax.swing.JLabel();
+        shopName6 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        txtNameProduct7 = new javax.swing.JTextArea();
-        shopName7 = new javax.swing.JLabel();
         staffPrice7 = new javax.swing.JLabel();
         shopAdress7 = new javax.swing.JLabel();
         staffVote7 = new javax.swing.JLabel();
+        name1Product8 = new javax.swing.JLabel();
+        name2Product8 = new javax.swing.JLabel();
         avatarStaff7 = new javax.swing.JLabel();
+        shopName7 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtNameProduct3 = new javax.swing.JTextArea();
-        shopName3 = new javax.swing.JLabel();
         staffPrice3 = new javax.swing.JLabel();
         shopAdress3 = new javax.swing.JLabel();
         staffVote3 = new javax.swing.JLabel();
+        name1Product4 = new javax.swing.JLabel();
+        name2Product4 = new javax.swing.JLabel();
         avatarStaff3 = new javax.swing.JLabel();
+        shopName3 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtNameProduct2 = new javax.swing.JTextArea();
-        shopName2 = new javax.swing.JLabel();
         staffPrice2 = new javax.swing.JLabel();
         shopAdress2 = new javax.swing.JLabel();
         staffVote2 = new javax.swing.JLabel();
+        name1Product3 = new javax.swing.JLabel();
+        name2Product3 = new javax.swing.JLabel();
         avatarStaff2 = new javax.swing.JLabel();
+        shopName2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jlabelLogoShop = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -188,15 +189,16 @@ public class MainFormList extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Shoppee");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximizedBounds(new java.awt.Rectangle(1376, 979, 979, 979));
+        setMaximumSize(new java.awt.Dimension(1376, 979));
         setMinimumSize(new java.awt.Dimension(1376, 979));
+        setPreferredSize(new java.awt.Dimension(1376, 979));
         setResizable(false);
 
         jpanelMain.setBackground(new java.awt.Color(255, 255, 255));
         jpanelMain.setEnabled(false);
         jpanelMain.setMaximumSize(new java.awt.Dimension(944, 821));
         jpanelMain.setMinimumSize(new java.awt.Dimension(944, 821));
-        jpanelMain.setPreferredSize(new java.awt.Dimension(1360, 870));
+        jpanelMain.setPreferredSize(new java.awt.Dimension(944, 821));
 
         jPanel3.setBackground(new java.awt.Color(235, 235, 235));
 
@@ -247,7 +249,7 @@ public class MainFormList extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,21 +277,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel10.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel10.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct4.setEditable(false);
-        txtNameProduct4.setColumns(20);
-        txtNameProduct4.setLineWrap(true);
-        txtNameProduct4.setRows(2);
-        txtNameProduct4.setBorder(null);
-        txtNameProduct4.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct4.setRequestFocusEnabled(false);
-        jScrollPane5.setViewportView(txtNameProduct4);
-
-        shopName4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName4.setText("ten shop");
-        shopName4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel10.setMaximumSize(new Dimension(218,362));
+        jPanel10.setMinimumSize(new Dimension(218,362));
+        jPanel10.setPreferredSize(new Dimension(218,362));
 
         staffPrice4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice4.setForeground(new java.awt.Color(255, 51, 51));
@@ -300,30 +290,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote4.setText("stars vote");
 
+        name1Product5.setText("jLabel13");
+
+        name2Product5.setText("jLabel13");
+
+        shopName4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName4.setText("ten shop");
+        shopName4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+            .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 47, Short.MAX_VALUE))
+                    .addComponent(name1Product5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(avatarStaff4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -337,8 +338,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel9.setMinimumSize(new java.awt.Dimension(174, 227));
+        jPanel9.setMaximumSize(new Dimension(218,362));
+        jPanel9.setMinimumSize(new Dimension(218,362));
+        jPanel9.setPreferredSize(new Dimension(218,362));
 
         shopName.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         shopName.setText("ten shop");
@@ -353,39 +355,37 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote.setText("stars vote");
 
-        txtNameProduct.setEditable(false);
-        txtNameProduct.setColumns(20);
-        txtNameProduct.setLineWrap(true);
-        txtNameProduct.setRows(2);
-        txtNameProduct.setBorder(null);
-        txtNameProduct.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct.setRequestFocusEnabled(false);
-        jScrollPane1.setViewportView(txtNameProduct);
+        name1Product1.setText("jLabel13");
+
+        name2Product1.setText("jLabel13");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 51, Short.MAX_VALUE))
+                    .addComponent(name1Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(avatarStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -399,21 +399,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel11.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct5.setEditable(false);
-        txtNameProduct5.setColumns(20);
-        txtNameProduct5.setLineWrap(true);
-        txtNameProduct5.setRows(2);
-        txtNameProduct5.setBorder(null);
-        txtNameProduct5.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct5.setRequestFocusEnabled(false);
-        jScrollPane6.setViewportView(txtNameProduct5);
-
-        shopName5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName5.setText("ten shop");
-        shopName5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel11.setMaximumSize(new Dimension(218,362));
+        jPanel11.setMinimumSize(new Dimension(218,362));
+        jPanel11.setPreferredSize(new Dimension(218,362));
 
         staffPrice5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice5.setForeground(new java.awt.Color(255, 51, 51));
@@ -424,30 +412,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote5.setText("stars vote");
 
+        name1Product6.setText("jLabel13");
+
+        name2Product6.setText("jLabel13");
+
+        shopName5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName5.setText("ten shop");
+        shopName5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+            .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 47, Short.MAX_VALUE))
+                    .addComponent(name1Product6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(avatarStaff5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product6, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product6, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -461,21 +460,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel12.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel12.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct1.setEditable(false);
-        txtNameProduct1.setColumns(20);
-        txtNameProduct1.setLineWrap(true);
-        txtNameProduct1.setRows(2);
-        txtNameProduct1.setBorder(null);
-        txtNameProduct1.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct1.setRequestFocusEnabled(false);
-        jScrollPane2.setViewportView(txtNameProduct1);
-
-        shopName1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName1.setText("ten shop");
-        shopName1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel12.setMaximumSize(new Dimension(218,362));
+        jPanel12.setMinimumSize(new Dimension(218,362));
+        jPanel12.setPreferredSize(new Dimension(218,362));
 
         staffPrice1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice1.setForeground(new java.awt.Color(255, 51, 51));
@@ -486,30 +473,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote1.setText("stars vote");
 
+        name1Product2.setText("jLabel13");
+
+        name2Product2.setText("jLabel13");
+
+        shopName1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName1.setText("ten shop");
+        shopName1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+            .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 79, Short.MAX_VALUE))
+                    .addComponent(name1Product2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addComponent(avatarStaff1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -523,21 +521,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel13.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel13.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct6.setEditable(false);
-        txtNameProduct6.setColumns(20);
-        txtNameProduct6.setLineWrap(true);
-        txtNameProduct6.setRows(2);
-        txtNameProduct6.setBorder(null);
-        txtNameProduct6.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct6.setRequestFocusEnabled(false);
-        jScrollPane7.setViewportView(txtNameProduct6);
-
-        shopName6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName6.setText("ten shop");
-        shopName6.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel13.setMaximumSize(new Dimension(218,362));
+        jPanel13.setMinimumSize(new Dimension(218,362));
+        jPanel13.setPreferredSize(new Dimension(218,362));
 
         staffPrice6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice6.setForeground(new java.awt.Color(255, 51, 51));
@@ -548,30 +534,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote6.setText("stars vote");
 
+        name1Product7.setText("jLabel13");
+
+        name2Product7.setText("jLabel13");
+
+        shopName6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName6.setText("ten shop");
+        shopName6.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                        .addGap(0, 47, Short.MAX_VALUE))
+                    .addComponent(name1Product7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(avatarStaff6, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product7, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -585,21 +582,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel14.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel14.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct7.setEditable(false);
-        txtNameProduct7.setColumns(20);
-        txtNameProduct7.setLineWrap(true);
-        txtNameProduct7.setRows(2);
-        txtNameProduct7.setBorder(null);
-        txtNameProduct7.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct7.setRequestFocusEnabled(false);
-        jScrollPane8.setViewportView(txtNameProduct7);
-
-        shopName7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName7.setText("ten shop");
-        shopName7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel14.setMaximumSize(new Dimension(218,362));
+        jPanel14.setMinimumSize(new Dimension(218,362));
+        jPanel14.setPreferredSize(new Dimension(218,362));
 
         staffPrice7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice7.setForeground(new java.awt.Color(255, 51, 51));
@@ -610,30 +595,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote7.setText("stars vote");
 
+        name1Product8.setText("jLabel13");
+
+        name2Product8.setText("jLabel13");
+
+        shopName7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName7.setText("ten shop");
+        shopName7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+            .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 79, Short.MAX_VALUE))
+                    .addComponent(name1Product8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(avatarStaff7, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product8, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -647,21 +643,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel15.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel15.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct3.setEditable(false);
-        txtNameProduct3.setColumns(20);
-        txtNameProduct3.setLineWrap(true);
-        txtNameProduct3.setRows(2);
-        txtNameProduct3.setBorder(null);
-        txtNameProduct3.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct3.setRequestFocusEnabled(false);
-        jScrollPane4.setViewportView(txtNameProduct3);
-
-        shopName3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName3.setText("ten shop");
-        shopName3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel15.setMaximumSize(new Dimension(218,362));
+        jPanel15.setMinimumSize(new Dimension(218,362));
+        jPanel15.setPreferredSize(new Dimension(218,362));
 
         staffPrice3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice3.setForeground(new java.awt.Color(255, 51, 51));
@@ -672,30 +656,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote3.setText("stars vote");
 
+        name1Product4.setText("jLabel13");
+
+        name2Product4.setText("jLabel13");
+
+        shopName3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName3.setText("ten shop");
+        shopName3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 79, Short.MAX_VALUE))
+                    .addComponent(name1Product4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addComponent(avatarStaff3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -709,21 +704,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel16.setMaximumSize(new java.awt.Dimension(174, 227));
-        jPanel16.setMinimumSize(new java.awt.Dimension(174, 227));
-
-        txtNameProduct2.setEditable(false);
-        txtNameProduct2.setColumns(20);
-        txtNameProduct2.setLineWrap(true);
-        txtNameProduct2.setRows(2);
-        txtNameProduct2.setBorder(null);
-        txtNameProduct2.setMaximumSize(new java.awt.Dimension(194, 48));
-        txtNameProduct2.setRequestFocusEnabled(false);
-        jScrollPane3.setViewportView(txtNameProduct2);
-
-        shopName2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        shopName2.setText("ten shop");
-        shopName2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+        jPanel16.setMaximumSize(new Dimension(218,362));
+        jPanel16.setMinimumSize(new Dimension(218,362));
+        jPanel16.setPreferredSize(new Dimension(218,362));
 
         staffPrice2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         staffPrice2.setForeground(new java.awt.Color(255, 51, 51));
@@ -734,30 +717,41 @@ public class MainFormList extends javax.swing.JFrame {
 
         staffVote2.setText("stars vote");
 
+        name1Product3.setText("jLabel13");
+
+        name2Product3.setText("jLabel13");
+
+        shopName2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        shopName2.setText("ten shop");
+        shopName2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 0, 0), null));
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(avatarStaff2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+            .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(staffPrice2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffVote2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel16Layout.createSequentialGroup()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffPrice2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffVote2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(shopAdress2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(shopName2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                        .addGap(0, 79, Short.MAX_VALUE))
+                    .addComponent(name1Product3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2Product3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addComponent(avatarStaff2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(name1Product3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name2Product3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shopName2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -777,16 +771,16 @@ public class MainFormList extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelMainLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jpanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jpanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -822,8 +816,9 @@ public class MainFormList extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(254, 87, 35));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel8.setMaximumSize(new java.awt.Dimension(1358, 104));
-        jPanel8.setMinimumSize(new java.awt.Dimension(1358, 104));
+        jPanel8.setMaximumSize(new java.awt.Dimension(1376, 104));
+        jPanel8.setMinimumSize(new java.awt.Dimension(1376, 104));
+        jPanel8.setPreferredSize(new java.awt.Dimension(1376, 104));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -943,7 +938,7 @@ public class MainFormList extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jlabelLogoBag, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(113, Short.MAX_VALUE))))
+                        .addContainerGap(131, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1135,13 +1130,13 @@ public class MainFormList extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jpanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1149,7 +1144,7 @@ public class MainFormList extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1234,14 +1229,6 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToggleButton jToggleButton1;
@@ -1257,6 +1244,22 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JLabel jlabelTopSearched4;
     private javax.swing.JLabel jlabelTopSearched5;
     private javax.swing.JPanel jpanelMain;
+    private javax.swing.JLabel name1Product1;
+    private javax.swing.JLabel name1Product2;
+    private javax.swing.JLabel name1Product3;
+    private javax.swing.JLabel name1Product4;
+    private javax.swing.JLabel name1Product5;
+    private javax.swing.JLabel name1Product6;
+    private javax.swing.JLabel name1Product7;
+    private javax.swing.JLabel name1Product8;
+    private javax.swing.JLabel name2Product1;
+    private javax.swing.JLabel name2Product2;
+    private javax.swing.JLabel name2Product3;
+    private javax.swing.JLabel name2Product4;
+    private javax.swing.JLabel name2Product5;
+    private javax.swing.JLabel name2Product6;
+    private javax.swing.JLabel name2Product7;
+    private javax.swing.JLabel name2Product8;
     private javax.swing.JCheckBox producerName1;
     private javax.swing.JCheckBox producerName2;
     private javax.swing.JCheckBox producerName3;
@@ -1293,14 +1296,6 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JLabel staffVote5;
     private javax.swing.JLabel staffVote6;
     private javax.swing.JLabel staffVote7;
-    private javax.swing.JTextArea txtNameProduct;
-    private javax.swing.JTextArea txtNameProduct1;
-    private javax.swing.JTextArea txtNameProduct2;
-    private javax.swing.JTextArea txtNameProduct3;
-    private javax.swing.JTextArea txtNameProduct4;
-    private javax.swing.JTextArea txtNameProduct5;
-    private javax.swing.JTextArea txtNameProduct6;
-    private javax.swing.JTextArea txtNameProduct7;
     private javax.swing.JTextField txtSearchField;
     // End of variables declaration//GEN-END:variables
 }

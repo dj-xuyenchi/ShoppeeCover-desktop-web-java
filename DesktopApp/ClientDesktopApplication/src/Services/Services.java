@@ -5,6 +5,8 @@
 package Services;
 
 import ClassLib.ImageFromSql;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
@@ -21,6 +23,7 @@ public class Services implements ServiceDAO {
     private List<ImageFromSql> listImgDecor2;
     private Socket soc;
     private ObjectInputStream ois;
+    private DataOutputStream dos;
 
     public Services() {
     }
@@ -38,13 +41,16 @@ public class Services implements ServiceDAO {
     @Override
     public void conectServer() {
         try {
-            soc = new Socket("2405:4802:239:bc0:4ca6:346d:2702:fffc", 6969);
+            soc = new Socket("localhost", 6969);
             System.out.println("Connected..");
             ois = new ObjectInputStream(soc.getInputStream());
-            Object getOb1 = ois.readObject();
-            listImgDecor1 = (List<ImageFromSql>) getOb1;
+            dos = new DataOutputStream(soc.getOutputStream());
+            dos.writeInt(1);
+            
 //            Object getOb2 = ois.readObject();
 //            listImgDecor2 = (List<ImageFromSql>) getOb2;
+            Object getOb1 = ois.readObject();
+            listImgDecor1 = (List<ImageFromSql>) getOb1;
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (ClassNotFoundException ex) {

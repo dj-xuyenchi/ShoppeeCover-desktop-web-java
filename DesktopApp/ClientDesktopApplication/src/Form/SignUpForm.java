@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+import Services.Services;
 /**
  *
  * @author PC
@@ -27,8 +27,9 @@ public class SignUpForm extends javax.swing.JFrame {
     private SignUpFormSetUpInfo _signUpFormSetInfo;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
-    public SignUpForm() {
+    public SignUpForm(Services s) {
         initComponents();
+        
         setLogoAndContent();
         Container con = this.getContentPane();
         con.setBackground(Color.WHITE);

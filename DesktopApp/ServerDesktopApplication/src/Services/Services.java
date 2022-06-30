@@ -5,6 +5,7 @@
 package Services;
 
 import ClassLib.ImageFromSql;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -24,7 +25,7 @@ import java.util.logging.Logger;
  * @author PC
  */
 public class Services implements ServiceDAO {
-    
+
     private ServerSocket ss;
     private Socket soc;
     private ObjectOutputStream oos;
@@ -34,11 +35,12 @@ public class Services implements ServiceDAO {
     private Statement st;
     private ResultSet rs;
     private List<ImageFromSql> listPackage;
-    
+    private DataInputStream dis;
+
     public Services(int port) {
         this.port = port;
     }
-    
+
     @Override
     public void openSql() {
         try {
@@ -51,9 +53,9 @@ public class Services implements ServiceDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
     }
-    
+
     @Override
     public void openServer() {
         try {
@@ -64,7 +66,7 @@ public class Services implements ServiceDAO {
             ex.printStackTrace();
         }
     }
-    
+
     @Override
     public void acceptClient() {
         Thread t = new Thread() {
@@ -75,12 +77,25 @@ public class Services implements ServiceDAO {
                         soc = ss.accept();
                         System.out.println("Accept...");
                         System.out.println("Connected...");
+                        dis = new DataInputStream(soc.getInputStream());
                         oos = new ObjectOutputStream(soc.getOutputStream());
-                        wrapDataPackage1();
-                        oos.writeObject(listPackage);
+                        int order = dis.readInt();
+                        switch (order) {
+                            case 1:
+                                wrapDataPackage1();
+                                oos.writeObject(listPackage);
+                                break;
+                            case 2:
+                                //  wrapDataPackage1();
+                                // oos.writeObject(listPackage);
+                                break;
+                        }
+                        Thread.sleep(500);
 //                        wrapDataPackage2();
 //                        oos.writeObject(listPackage);
                     } catch (IOException ex) {
+                        ex.printStackTrace();
+                    } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }
                 }
@@ -88,7 +103,7 @@ public class Services implements ServiceDAO {
         };
         t.start();
     }
-    
+
     @Override
     public void wrapDataPackage1() {
         listPackage = new ArrayList<>();
@@ -124,7 +139,7 @@ public class Services implements ServiceDAO {
             ex.printStackTrace();
         }
     }
-    
+
     @Override
     public void closeSql() {
         try {
@@ -135,7 +150,7 @@ public class Services implements ServiceDAO {
             ex.printStackTrace();
         }
     }
-    
+
     @Override
     public void closeServer() {
         try {
@@ -146,5 +161,5 @@ public class Services implements ServiceDAO {
             ex.printStackTrace();
         }
     }
-    
+
 }

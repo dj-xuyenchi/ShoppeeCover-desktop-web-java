@@ -41,10 +41,6 @@ public class MainForm extends javax.swing.JFrame {
         setLogoAndContent();
         _con = this.getContentPane();
         _con.setBackground(Color.WHITE);
-          Toolkit t = Toolkit.getDefaultToolkit();
-        Dimension d = t.getScreenSize();
-        this.setSize(d.width-300, d.height-100);
-        setLocationRelativeTo(this);
         setLocationRelativeTo(this);
     }
 
@@ -588,7 +584,7 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jlabelSignInMouseClicked
 
     private void jlabelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSignUpMouseClicked
-        _signUpForm = new SignUpForm();
+        _signUpForm = new SignUpForm(services);
         this.dispose();
         _signUpForm.setVisible(true);
     }//GEN-LAST:event_jlabelSignUpMouseClicked
