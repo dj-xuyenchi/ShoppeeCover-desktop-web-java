@@ -4,11 +4,11 @@
  */
 package Form;
 
-import ClassLib.Account;
-import ClassLib.ImageFromSql;
+import ModelLibraries.Account;
+import ModelLibraries.ImageFromSql;
 import javax.swing.ImageIcon;
-import Services.Img;
-import Services.Services;
+import ModelLibraries.Img;
+import Service.Services;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;

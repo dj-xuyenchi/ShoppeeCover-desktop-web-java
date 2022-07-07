@@ -4,7 +4,7 @@
  */
 package run;
 
-import Services.Services;
+import Service.MoonNight.SSClass;
 
 /**
  *
@@ -14,7 +14,7 @@ public class ServerMain {
 
     public static void main(String[] args) {
         try {
-            Services letGo = new Services(6969);
+            SSClass letGo = new SSClass(6969);
             letGo.openServer();
             letGo.acceptClient();
         } catch (Exception e) {

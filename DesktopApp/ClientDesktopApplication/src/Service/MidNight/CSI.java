@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package Services;
+package Service.MidNight;
 
-import ClassLib.ImageFromSql;
+import ModelLibraries.ImageFromSql;
 import java.util.List;
 
 /**
- *
+ * Client Service Interfaces
  * @author PC
  */
-public interface ServiceDAO {
+public interface CSI {
     public List<ImageFromSql> getList();
     public List<ImageFromSql> getList1();
     public void conectServer();

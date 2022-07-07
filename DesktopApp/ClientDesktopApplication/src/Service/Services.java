@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Services;
+package Service;
 
-import ClassLib.ImageFromSql;
+import Service.MidNight.CSI;
+import ModelLibraries.ImageFromSql;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.List;
  *
  * @author PC
  */
-public class Services implements ServiceDAO {
+public class Services implements CSI {
 
     private List<ImageFromSql> listImgDecor1;
     private List<ImageFromSql> listImgDecor2;

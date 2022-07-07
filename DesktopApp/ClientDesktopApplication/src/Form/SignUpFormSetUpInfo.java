@@ -6,7 +6,7 @@ package Form;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
-import Services.Img;
+import ModelLibraries.Img;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;

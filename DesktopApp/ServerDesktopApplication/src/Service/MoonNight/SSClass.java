@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Services;
+package Service.MoonNight;
 
-import ClassLib.ImageFromSql;
+import ModelLibraries.ImageFromSql;
+import Service.SMI;
+import Service.SMI;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -21,10 +23,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Server Services Class
  * @author PC
  */
-public class Services implements ServiceDAO {
+public class SSClass implements SMI {
 
     private ServerSocket ss;
     private Socket soc;
@@ -37,7 +39,7 @@ public class Services implements ServiceDAO {
     private List<ImageFromSql> listPackage;
     private DataInputStream dis;
 
-    public Services(int port) {
+    public SSClass(int port) {
         this.port = port;
     }
 
