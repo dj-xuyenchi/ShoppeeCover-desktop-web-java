@@ -12,3 +12,5 @@ Project server runs ServerMain
 Server is listening... >>> OK
 The project client runs ClientMain
 Connected.. >>> OK
+
+https://user-images.githubusercontent.com/89133721/178034710-ab7c4ba2-ddc8-46b9-877c-2e67c7f8f894.png
