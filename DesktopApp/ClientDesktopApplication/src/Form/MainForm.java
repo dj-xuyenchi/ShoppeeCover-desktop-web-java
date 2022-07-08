@@ -574,7 +574,7 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSearchFieldMouseClicked
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        MainFormList main = new MainFormList("",listDecor);
+        MainFormList main = new MainFormList(txtSearchField.getText());
         this.dispose();
         main.setVisible(true);
     }//GEN-LAST:event_btnSearchActionPerformed

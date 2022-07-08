@@ -8,6 +8,7 @@ import ModelLibraries.ImageFromSql;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import ModelLibraries.Img;
+import Service.ClientServices;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,22 +19,23 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author PC
  */
 public class MainFormList extends javax.swing.JFrame {
+
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     private SignUpForm _signUpForm;
     private SignInForm _signInForm;
     private Container _con;
-    private List<ImageFromSql> listDecor;
+    private ClientServices _services;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
-    public MainFormList(String searchingProduct, List<ImageFromSql> listDecor) {
+    public MainFormList(String searchingProduct) {
         initComponents();
-        this.listDecor = listDecor;
+        _services = new ClientServices();
+        _services.connectServerAndOrderDecor(1);
         setLogoAndContent();
         _con = this.getContentPane();
         _con.setBackground(Color.WHITE);
@@ -43,22 +45,23 @@ public class MainFormList extends javax.swing.JFrame {
 
     private void setLogoAndContent() {
         try {
-            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(listDecor.get(0).getData()));
-            ImageIcon imgLogoName = new ImageIcon(Img.create_img_from_byte(listDecor.get(1).getData()));
-            ImageIcon imgLogoSearch = new ImageIcon(Img.create_img_from_byte(listDecor.get(2).getData()));
-            ImageIcon imgLogoBag = new ImageIcon(Img.create_img_from_byte(listDecor.get(3).getData()));
-            ImageIcon imgPanel1 = new ImageIcon(Img.create_img_from_byte(listDecor.get(4).getData()));
-            ImageIcon imgPanel2 = new ImageIcon(Img.create_img_from_byte(listDecor.get(5).getData()));
-            ImageIcon pannel3 = new ImageIcon(Img.create_img_from_byte(listDecor.get(11).getData()));
-            ImageIcon logoFilter = new ImageIcon(Img.create_img_from_byte(listDecor.get(29).getData()));
-            jButton1.setIcon(new ImageIcon(Img.resizer(imgLogoSearch.getImage(), 41, 41)));
+            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(_services.getList().get(0).getData()));
+            ImageIcon imgLogoName = new ImageIcon(Img.create_img_from_byte(_services.getList().get(1).getData()));
+            ImageIcon imgLogoSearch = new ImageIcon(Img.create_img_from_byte(_services.getList().get(2).getData()));
+            ImageIcon imgLogoBag = new ImageIcon(Img.create_img_from_byte(_services.getList().get(3).getData()));
+           // ImageIcon imgPanel1 = new ImageIcon(Img.create_img_from_byte(_services.getList().get(4).getData()));
+           // ImageIcon imgPanel2 = new ImageIcon(Img.create_img_from_byte(_services.getList().get(5).getData()));
+           // ImageIcon pannel3 = new ImageIcon(Img.create_img_from_byte(_services.getList().get(11).getData()));
+            ImageIcon logoFilter = new ImageIcon(Img.create_img_from_byte(_services.getList().get(29).getData()));
             filter.setIcon(new ImageIcon(Img.resizer(logoFilter.getImage(), 31, 35)));
+            jlabelLogoShop.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 102, 93)));
+            jlabelShopName.setIcon(new ImageIcon(Img.resizer(imgLogoName.getImage(), 100, 30)));
+            jlabelLogoBag.setIcon(new ImageIcon(Img.resizer(imgLogoBag.getImage(), 40, 30)));
+            btnSearch.setIcon(new ImageIcon(Img.resizer(imgLogoSearch.getImage(), 41, 41)));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
-
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,7 +155,7 @@ public class MainFormList extends javax.swing.JFrame {
         jlabelShopName = new javax.swing.JLabel();
         txtSearchField = new javax.swing.JTextField();
         jlabelLogoBag = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         jlabelTopSearched1 = new javax.swing.JLabel();
         jlabelTopSearched2 = new javax.swing.JLabel();
         jlabelTopSearched3 = new javax.swing.JLabel();
@@ -160,6 +163,7 @@ public class MainFormList extends javax.swing.JFrame {
         jlabelTopSearched5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        bagNumber = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         filter = new javax.swing.JLabel();
@@ -855,10 +859,10 @@ public class MainFormList extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setBorder(null);
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -890,6 +894,10 @@ public class MainFormList extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Thông Báo");
 
+        bagNumber.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bagNumber.setForeground(new java.awt.Color(255, 255, 255));
+        bagNumber.setText("10");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -908,7 +916,7 @@ public class MainFormList extends javax.swing.JFrame {
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
+                                .addComponent(btnSearch))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(jlabelTopSearched1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -935,7 +943,9 @@ public class MainFormList extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jlabelLogoBag, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(131, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bagNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(98, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -954,10 +964,12 @@ public class MainFormList extends javax.swing.JFrame {
                         .addComponent(jlabelShopName, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addGap(9, 9, 9)
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jlabelLogoBag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlabelLogoBag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bagNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jlabelTopSearched1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1153,10 +1165,10 @@ public class MainFormList extends javax.swing.JFrame {
         txtSearchField.setText("");
     }//GEN-LAST:event_txtSearchFieldMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
 
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jlabelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSignInMouseClicked
         _signInForm = new SignInForm();
@@ -1189,10 +1201,11 @@ public class MainFormList extends javax.swing.JFrame {
     private javax.swing.JLabel avatarStaff5;
     private javax.swing.JLabel avatarStaff6;
     private javax.swing.JLabel avatarStaff7;
+    private javax.swing.JLabel bagNumber;
     private javax.swing.JTextField btnFilterPriceFrom;
     private javax.swing.JTextField btnFilterPriceTo;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel filter;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

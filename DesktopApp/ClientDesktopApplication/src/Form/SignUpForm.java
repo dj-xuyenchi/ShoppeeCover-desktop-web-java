@@ -35,7 +35,7 @@ public class SignUpForm extends javax.swing.JFrame {
     public SignUpForm() {
         initComponents();
         _service = new ClientServices();
-         _service.connectServerAndOrderDecor(2);
+        _service.connectServerAndOrderDecor(2);
         setLogoAndContent();
         Container con = this.getContentPane();
         con.setBackground(Color.WHITE);

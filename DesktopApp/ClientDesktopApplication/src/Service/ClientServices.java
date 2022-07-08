@@ -78,6 +78,7 @@ public class ClientServices implements CSI {
             Object returnData = ois.readObject();
             Account a = (Account) returnData;
             System.out.println(a.getId());
+            return a;
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (ClassNotFoundException ex) {
