@@ -139,7 +139,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="720" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -333,7 +333,7 @@
                                   <Component id="shopAdress4" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName4" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product5" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product5" alignment="0" max="32767" attributes="0"/>
@@ -452,7 +452,7 @@
                                   <Component id="shopAdress" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product1" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product1" alignment="0" max="32767" attributes="0"/>
@@ -571,7 +571,7 @@
                                   <Component id="shopAdress5" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName5" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product6" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product6" alignment="0" max="32767" attributes="0"/>
@@ -690,7 +690,7 @@
                                   <Component id="shopAdress1" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName1" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product2" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product2" alignment="0" max="32767" attributes="0"/>
@@ -809,7 +809,7 @@
                                   <Component id="shopAdress6" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName6" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product7" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product7" alignment="0" max="32767" attributes="0"/>
@@ -928,7 +928,7 @@
                                   <Component id="shopAdress7" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName7" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product8" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product8" alignment="0" max="32767" attributes="0"/>
@@ -1047,7 +1047,7 @@
                                   <Component id="shopAdress3" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName3" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product4" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product4" alignment="0" max="32767" attributes="0"/>
@@ -1166,7 +1166,7 @@
                                   <Component id="shopAdress2" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="shopName2" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="name1Product3" alignment="0" max="32767" attributes="0"/>
                           <Component id="name2Product3" alignment="0" max="32767" attributes="0"/>

@@ -8,7 +8,7 @@ import ModelLibraries.Account;
 import ModelLibraries.ImageFromSql;
 import javax.swing.ImageIcon;
 import ModelLibraries.Img;
-import Service.Services;
+import Service.ClientServices;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -29,14 +29,14 @@ public class MainForm extends javax.swing.JFrame {
     private SignUpForm _signUpForm;
     private SignInForm _signInForm;
     private Container _con;
-    private Services services;
+    private ClientServices services;
     private List<ImageFromSql> listDecor;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     public MainForm() {
         initComponents();
-        services = new Services();
-        services.conectServer();
+        services = new ClientServices();
+        services.connectServerAndOrderDecor(1);
         listDecor = services.getList();
         setLogoAndContent();
         _con = this.getContentPane();
@@ -46,6 +46,9 @@ public class MainForm extends javax.swing.JFrame {
 
     public MainForm(Account a) {
         initComponents();
+        services = new ClientServices();
+          services.connectServerAndOrderDecor(1);
+        listDecor = services.getList();
         setLogoAndContent();
         setAccount(a.getName());
         _con = this.getContentPane();
@@ -584,45 +587,12 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jlabelSignInMouseClicked
 
     private void jlabelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSignUpMouseClicked
-        _signUpForm = new SignUpForm(services);
+        _signUpForm = new SignUpForm();
         this.dispose();
         _signUpForm.setVisible(true);
     }//GEN-LAST:event_jlabelSignUpMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainForm().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;

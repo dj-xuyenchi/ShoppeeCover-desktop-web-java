@@ -4,6 +4,7 @@
  */
 package Service.MidNight;
 
+import ModelLibraries.Account;
 import ModelLibraries.ImageFromSql;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  */
 public interface CSI {
     public List<ImageFromSql> getList();
-    public List<ImageFromSql> getList1();
-    public void conectServer();
+    public void connectServerAndOrderDecor(int order);
+    public void closeConnect();
+    public Account signInQuest(String user, String pass,int typeSignIn);
 }

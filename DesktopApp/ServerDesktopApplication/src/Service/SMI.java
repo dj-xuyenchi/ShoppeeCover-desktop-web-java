@@ -4,16 +4,26 @@
  */
 package Service;
 
+import ModelLibraries.Account;
+
 /**
- * Server Method Interfaces 
+ * Server Method Interfaces
+ *
  * @author PC
  */
 public interface SMI {
+
     public void openServer();
+
     public void acceptClient();
+
     public void openSql();
+
     public void closeSql();
+
     public void closeServer();
-    public void wrapDataPackage1();
-    public void wrapDataPackage2();
+
+    public void wrapDataPackage(String query);
+
+    public Account signInQuest(String user,String password,int type);
 }

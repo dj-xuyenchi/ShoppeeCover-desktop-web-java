@@ -4,15 +4,15 @@
  */
 package run;
 
-import Service.Services;
 import Form.MainForm;
+
 /**
  *
  * @author PC
  */
 public class ClientMain {
     public static void main(String[] args) {
-       MainForm main = new MainForm();
-       main.setVisible(true);
+        MainForm m = new MainForm();
+        m.setVisible(true);
     }
 }

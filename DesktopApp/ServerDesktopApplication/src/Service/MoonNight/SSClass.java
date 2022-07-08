@@ -4,6 +4,7 @@
  */
 package Service.MoonNight;
 
+import ModelLibraries.Account;
 import ModelLibraries.ImageFromSql;
 import Service.SMI;
 import Service.SMI;
@@ -24,6 +25,7 @@ import java.util.logging.Logger;
 
 /**
  * Server Services Class
+ *
  * @author PC
  */
 public class SSClass implements SMI {
@@ -84,17 +86,22 @@ public class SSClass implements SMI {
                         int order = dis.readInt();
                         switch (order) {
                             case 1:
-                                wrapDataPackage1();
+                                wrapDataPackage("Select imgname,imgdata from SERVERIMG order by countid asc");
                                 oos.writeObject(listPackage);
                                 break;
                             case 2:
-                                //  wrapDataPackage1();
-                                // oos.writeObject(listPackage);
+                                wrapDataPackage("Select imgname,imgdata from SERVERIMGSIGNIN order by countid asc");
+                                oos.writeObject(listPackage);
+                                break;
+                            case 3:
+                                String data = dis.readUTF();
+                                System.out.println(data);
+                                String[] create = data.split(";");
+                                Account a = signInQuest(create[0], create[1], Integer.parseInt(create[2]));
+                                oos.writeObject(a);
                                 break;
                         }
                         Thread.sleep(500);
-//                        wrapDataPackage2();
-//                        oos.writeObject(listPackage);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     } catch (InterruptedException ex) {
@@ -107,30 +114,11 @@ public class SSClass implements SMI {
     }
 
     @Override
-    public void wrapDataPackage1() {
+    public void wrapDataPackage(String query) {
         listPackage = new ArrayList<>();
         openSql();
-        String query1 = "Select imgname,imgdata from SERVERIMG order by countid asc";
         try {
-            rs = st.executeQuery(query1);
-            while (rs.next()) {
-                String imgName = rs.getString(1);
-                byte[] imgData = rs.getBytes(2);
-                listPackage.add(new ImageFromSql(imgName, imgData));
-            }
-            closeSql();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    @Override
-    public void wrapDataPackage2() {
-        listPackage = new ArrayList<>();
-        openSql();
-        String query1 = "Select imgname,imgdata from SERVERIMG order by countid asc";
-        try {
-            rs = st.executeQuery(query1);
+            rs = st.executeQuery(query);
             while (rs.next()) {
                 String imgName = rs.getString(1);
                 byte[] imgData = rs.getBytes(2);
@@ -148,6 +136,7 @@ public class SSClass implements SMI {
             rs.close();
             st.close();
             con.close();
+            System.out.println("Closed SQL");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -159,9 +148,25 @@ public class SSClass implements SMI {
             oos.close();
             soc.close();
             ss.close();
+            System.out.println("Closed Server");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public Account signInQuest(String user, String password, int type) {
+        openSql();
+        try {
+            rs = st.executeQuery("exec ST_SIGNIN '" + user + "','" + password + "','" + type+"'");
+            while (rs.next()) {
+              return new Account(rs.getString(1), rs.getString(2), Integer.parseInt(rs.getString(3)));
+            }
+            closeSql();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
 }

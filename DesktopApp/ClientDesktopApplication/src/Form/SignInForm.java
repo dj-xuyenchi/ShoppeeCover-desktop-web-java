@@ -8,9 +8,11 @@ import ModelLibraries.Account;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import ModelLibraries.Img;
+import Service.ClientServices;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,10 +26,13 @@ public class SignInForm extends javax.swing.JFrame {
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     private MainForm _mainForm;
     private SignUpForm _signUpForm;
+    private ClientServices _service;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
     public SignInForm() {
         initComponents();
+        _service = new ClientServices();
+        _service.connectServerAndOrderDecor(2);
         setLogoAndContent();
         Container con = this.getContentPane();
         con.setBackground(Color.WHITE);
@@ -35,24 +40,62 @@ public class SignInForm extends javax.swing.JFrame {
     }
 
     private void setLogoAndContent() {
-        ImageIcon imgLogo = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\logoshop.png");
-        ImageIcon content = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\content.png");
-        ImageIcon footer = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\footer.png");
-        ImageIcon iconFb = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\icon-fb.png");
-        ImageIcon iconGg = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\icon-gg.png");
-        btnSigninFb.setIcon(new ImageIcon(Img.resizer(iconFb.getImage(), 30, 30)));
-        btnSigninFb.setText("Facebook");
-        btnSigninGg.setIcon(new ImageIcon(Img.resizer(iconGg.getImage(), 30, 30)));
-        btnSigninGg.setText("Google");
-        jlabelLogo.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 129, 100)));
-        jlabelContent.setIcon(new ImageIcon(Img.resizer(content.getImage(), 482, 460)));
-        jlabelFooter.setIcon(new ImageIcon(Img.resizer(footer.getImage(), 1376, 245)));
-
+        try {
+            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(_service.getList().get(0).getData()));
+            ImageIcon content = new ImageIcon(Img.create_img_from_byte(_service.getList().get(1).getData()));
+            ImageIcon footer = new ImageIcon(Img.create_img_from_byte(_service.getList().get(2).getData()));
+            ImageIcon iconFb = new ImageIcon(Img.create_img_from_byte(_service.getList().get(3).getData()));
+            ImageIcon iconGg = new ImageIcon(Img.create_img_from_byte(_service.getList().get(4).getData()));
+            btnSigninFb.setIcon(new ImageIcon(Img.resizer(iconFb.getImage(), 30, 30)));
+            btnSigninFb.setText("Facebook");
+            btnSigninGg.setIcon(new ImageIcon(Img.resizer(iconGg.getImage(), 30, 30)));
+            btnSigninGg.setText("Google");
+            jlabelLogo.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 129, 100)));
+            jlabelContent.setIcon(new ImageIcon(Img.resizer(content.getImage(), 482, 460)));
+            jlabelFooter.setIcon(new ImageIcon(Img.resizer(footer.getImage(), 1376, 245)));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
-    public static void main(String[] args) {
-        SignInForm test = new SignInForm();
-        test.setVisible(true);
+    private boolean checkData() {
+        String user = txtSignInField.getText();
+        String pass = String.valueOf(txtSignInPassWord.getPassword());
+        String regex = " ";
+        if (user.trim().length() == 0) {
+            txtSignInField.setForeground(Color.red);
+            txtSignInField.setText("Không được để trống!");
+            return false;
+        }
+        if (pass.trim().length() == 0) {
+            labelError.setForeground(Color.red);
+            labelError.setText("Mật khẩu trống!");
+            return false;
+        }
+        if (user.contains(regex)) {
+            txtSignInField.setForeground(Color.red);
+            txtSignInField.setText("Tài khoản không hợp lệ!");
+            return false;
+        }
+        if (pass.contains(regex)) {
+            labelError.setForeground(Color.red);
+            labelError.setText("Mật khẩu không hợp lệ!");
+            return false;
+        }
+        return true;
+    }
+
+    private Account signIn() {
+        String user = txtSignInField.getText();
+        int typeSignIn = 0;
+        String typePhone = "^[0-9]+$";
+        if (user.matches(typePhone)) {
+            typeSignIn = 1;
+        }
+        if (user.contains("@")) {
+            typeSignIn = 2;
+        }
+        return _service.signInQuest(user, String.valueOf(txtSignInPassWord.getPassword()), typeSignIn);
     }
 
     /**
@@ -72,7 +115,7 @@ public class SignInForm extends javax.swing.JFrame {
         jlabelContent = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtSignUpPhoneNumber = new javax.swing.JTextField();
+        txtSignInField = new javax.swing.JTextField();
         btnSignIn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -81,9 +124,10 @@ public class SignInForm extends javax.swing.JFrame {
         btnSigninGg = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jlabelSignIn = new javax.swing.JLabel();
-        txtSignUpReWritePass = new javax.swing.JPasswordField();
+        txtSignInPassWord = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        labelError = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jlabelFooter = new javax.swing.JLabel();
 
@@ -153,13 +197,13 @@ public class SignInForm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Đăng nhập");
 
-        txtSignUpPhoneNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtSignUpPhoneNumber.setForeground(new java.awt.Color(204, 204, 204));
-        txtSignUpPhoneNumber.setText("Email/Số điện thoại/Tên đăng nhập");
-        txtSignUpPhoneNumber.setMargin(new java.awt.Insets(2, 10, 2, 2));
-        txtSignUpPhoneNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtSignInField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtSignInField.setForeground(new java.awt.Color(204, 204, 204));
+        txtSignInField.setText("Email/Số điện thoại/Tên đăng nhập");
+        txtSignInField.setMargin(new java.awt.Insets(2, 10, 2, 2));
+        txtSignInField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtSignUpPhoneNumberMouseClicked(evt);
+                txtSignInFieldMouseClicked(evt);
             }
         });
 
@@ -201,11 +245,11 @@ public class SignInForm extends javax.swing.JFrame {
             }
         });
 
-        txtSignUpReWritePass.setText("123456789908");
-        txtSignUpReWritePass.setMargin(new java.awt.Insets(2, 10, 2, 2));
-        txtSignUpReWritePass.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtSignInPassWord.setText("123456789908");
+        txtSignInPassWord.setMargin(new java.awt.Insets(2, 10, 2, 2));
+        txtSignInPassWord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtSignUpReWritePassMouseClicked(evt);
+                txtSignInPassWordMouseClicked(evt);
             }
         });
 
@@ -220,34 +264,32 @@ public class SignInForm extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnSigninFb, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSigninGg, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btnSigninFb, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnSigninGg, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtSignUpPhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtSignUpReWritePass, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel11)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
+                        .addGap(56, 56, 56)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlabelSignIn)))
+                        .addComponent(jlabelSignIn))
+                    .addComponent(txtSignInField)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSignInPassWord, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSignIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -256,9 +298,11 @@ public class SignInForm extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSignUpPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSignInField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtSignUpReWritePass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSignInPassWord, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -279,7 +323,7 @@ public class SignInForm extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jlabelSignIn))
-                .addContainerGap())
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -340,14 +384,15 @@ public class SignInForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSignUpPhoneNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSignUpPhoneNumberMouseClicked
-        txtSignUpPhoneNumber.setText("");
+    private void txtSignInFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSignInFieldMouseClicked
+        txtSignInField.setForeground(Color.BLACK);
+        txtSignInField.setText("");
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSignUpPhoneNumberMouseClicked
+    }//GEN-LAST:event_txtSignInFieldMouseClicked
 
-    private void txtSignUpReWritePassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSignUpReWritePassMouseClicked
-        txtSignUpReWritePass.setText("");
-    }//GEN-LAST:event_txtSignUpReWritePassMouseClicked
+    private void txtSignInPassWordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSignInPassWordMouseClicked
+        txtSignInPassWord.setText("");
+    }//GEN-LAST:event_txtSignInPassWordMouseClicked
 
     private void jlabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelLogoMouseClicked
         _mainForm = new MainForm();
@@ -362,8 +407,17 @@ public class SignInForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jlabelSignInMouseClicked
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
-        _mainForm = new MainForm(new Account("", "Do Quang Anh"));
-        this.dispose();
+        if (checkData() == false) {
+            return;
+        }
+        labelError.setText("");
+        Account a = signIn();
+        if(a==null){
+            labelError.setForeground(Color.red);
+            labelError.setText("Tài khoản hoặc mật khẩu không đúng...!");
+            return;
+        }
+        _mainForm = new MainForm(a);
         _mainForm.setVisible(true);
     }//GEN-LAST:event_btnSignInActionPerformed
 
@@ -389,7 +443,8 @@ public class SignInForm extends javax.swing.JFrame {
     private javax.swing.JLabel jlabelFooter;
     private javax.swing.JLabel jlabelLogo;
     private javax.swing.JLabel jlabelSignIn;
-    private javax.swing.JTextField txtSignUpPhoneNumber;
-    private javax.swing.JPasswordField txtSignUpReWritePass;
+    private javax.swing.JLabel labelError;
+    private javax.swing.JTextField txtSignInField;
+    private javax.swing.JPasswordField txtSignInPassWord;
     // End of variables declaration//GEN-END:variables
 }

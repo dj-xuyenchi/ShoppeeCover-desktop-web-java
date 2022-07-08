@@ -14,7 +14,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Service.Services;
+import Service.ClientServices;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author PC
@@ -25,11 +29,13 @@ public class SignUpForm extends javax.swing.JFrame {
     private MainForm _mainForm;
     private SignInForm _signInForn;
     private SignUpFormSetUpInfo _signUpFormSetInfo;
+    private ClientServices _service;
 
     // This is variable Form do not delete or update if you guys do not understand applacation stream
-    public SignUpForm(Services s) {
+    public SignUpForm() {
         initComponents();
-        
+        _service = new ClientServices();
+         _service.connectServerAndOrderDecor(2);
         setLogoAndContent();
         Container con = this.getContentPane();
         con.setBackground(Color.WHITE);
@@ -37,18 +43,22 @@ public class SignUpForm extends javax.swing.JFrame {
     }
 
     private void setLogoAndContent() {
-        ImageIcon imgLogo = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\logoshop.png");
-        ImageIcon content = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\content.png");
-        ImageIcon footer = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\footer.png");
-        ImageIcon iconFb = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\icon-fb.png");
-        ImageIcon iconGg = new ImageIcon("C:\\Users\\PC\\Desktop\\jav3\\icon-jav3-signin\\icon-gg.png");
-        btnSigninFb.setIcon(new ImageIcon(Img.resizer(iconFb.getImage(), 30, 30)));
-        btnSigninFb.setText("Facebook");
-        btnSigninGg.setIcon(new ImageIcon(Img.resizer(iconGg.getImage(), 30, 30)));
-        btnSigninGg.setText("Google");
-        jlabelLogo.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 129, 100)));
-        jlabelContent.setIcon(new ImageIcon(Img.resizer(content.getImage(), 482, 460)));
-        jlabelFooter.setIcon(new ImageIcon(Img.resizer(footer.getImage(), 1376, 245)));
+        try {
+            ImageIcon imgLogo = new ImageIcon(Img.create_img_from_byte(_service.getList().get(0).getData()));
+            ImageIcon content = new ImageIcon(Img.create_img_from_byte(_service.getList().get(1).getData()));
+            ImageIcon footer = new ImageIcon(Img.create_img_from_byte(_service.getList().get(2).getData()));
+            ImageIcon iconFb = new ImageIcon(Img.create_img_from_byte(_service.getList().get(3).getData()));
+            ImageIcon iconGg = new ImageIcon(Img.create_img_from_byte(_service.getList().get(4).getData()));
+            btnSigninFb.setIcon(new ImageIcon(Img.resizer(iconFb.getImage(), 30, 30)));
+            btnSigninFb.setText("Facebook");
+            btnSigninGg.setIcon(new ImageIcon(Img.resizer(iconGg.getImage(), 30, 30)));
+            btnSigninGg.setText("Google");
+            jlabelLogo.setIcon(new ImageIcon(Img.resizer(imgLogo.getImage(), 129, 100)));
+            jlabelContent.setIcon(new ImageIcon(Img.resizer(content.getImage(), 482, 460)));
+            jlabelFooter.setIcon(new ImageIcon(Img.resizer(footer.getImage(), 1376, 245)));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
     }
 
@@ -65,13 +75,14 @@ public class SignUpForm extends javax.swing.JFrame {
             checkerNotification.setForeground(Color.red);
             checkerNotification.setText("Vui lòng nhập mật khẩu..!");
             resultCheck = false;
-        } 
+        }
         if (String.valueOf(txtSignUpReWritePass.getPassword()).trim().length() == 0) {
             checkerNotification.setForeground(Color.red);
             checkerNotification.setText("Vui lòng nhập mật khẩu..!");
             resultCheck = false;
-        } 
+        }
         if (!txtSignUpPhoneNumber.getText().trim().matches(regexSdt)) {
+            txtSignUpPhoneNumber.setForeground(Color.red);
             txtSignUpPhoneNumber.setText("Vui lòng nhập đúng số điện thoại..!");
             resultCheck = false;
         }
@@ -79,12 +90,12 @@ public class SignUpForm extends javax.swing.JFrame {
             checkerNotification.setForeground(Color.red);
             checkerNotification.setText("Mật khẩu phải có ít nhất 1 số 1 ký tự in hoa và tối thiểu 8 ký tự..!");
             resultCheck = false;
-        } 
+        }
         if (!String.valueOf(txtSignUpPass.getPassword()).trim().equals(String.valueOf(txtSignUpReWritePass.getPassword()).trim())) {
             checkerNotification.setForeground(Color.red);
             checkerNotification.setText("Mật khẩu xác nhận không khớp..!");
             resultCheck = false;
-        } 
+        }
         return resultCheck;
     }
 
@@ -440,7 +451,7 @@ public class SignUpForm extends javax.swing.JFrame {
     private void btnSetNewAccountInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetNewAccountInfoActionPerformed
         if (checkData()) {
             checkerNotification.setText("");
-            _signUpFormSetInfo = new SignUpFormSetUpInfo("","");
+            _signUpFormSetInfo = new SignUpFormSetUpInfo("", "");
             this.dispose();
             _signUpFormSetInfo.setVisible(true);
         }
