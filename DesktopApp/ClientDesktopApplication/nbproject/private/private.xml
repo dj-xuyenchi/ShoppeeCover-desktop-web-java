@@ -5,16 +5,17 @@
         <group>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/MainForm.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/SignInForm.java</file>
-            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/SignUpFormSetUpInfo.java</file>
-            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/run/ClientMain.java</file>
+            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/ProductDetail.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Service/MidNight/CSI.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/SignUpForm.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/ModelLibraries/Account.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/socket/TCPClient.java</file>
+            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/MainFormList.java</file>
+            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/SignUpFormSetUpInfo.java</file>
+            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/run/ClientMain.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/ModelLibraries/ImageFromSql.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/ModelLibraries/Img.java</file>
             <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Service/ClientServices.java</file>
-            <file>file:/C:/Users/PC/Desktop/qa/ShoppeeCover-desktop-web-java/DesktopApp/ClientDesktopApplication/src/Form/MainFormList.java</file>
         </group>
     </open-files>
 </project-private>
